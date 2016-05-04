@@ -1,0 +1,38 @@
+body {
+	box-sizing: border-box;
+	text-align: center;
+}
+
+ .grid-container {
+    /*width : 100%;*/
+    max-width : 38em; 
+ }
+
+[class*='col-'] {
+    float: left;
+    min-height: 16em; 
+}
+
+div {
+	border: 1px solid black;
+}
+
+.row:before, 
+.row:after {
+	content:"";
+	display: table ;
+	clear: both;
+}
+
+.col-1 {
+	width: 33.17%;
+}
+
+.col-2 {
+	width: 33.17%;
+}
+
+.col-3 {
+	width: 33.17%;
+}
+
