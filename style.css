@@ -3,36 +3,40 @@ body {
 	text-align: center;
 }
 
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
  .grid-container {
-    /*width : 100%;*/
-    max-width : 38em; 
+    width : 80%;
+    margin: 0 auto 0 auto;
  }
 
-[class*='col-'] {
-    float: left;
-    min-height: 16em; 
-}
-
-div {
-	border: 1px solid black;
-}
-
-.row:before, 
-.row:after {
-	content:"";
-	display: table ;
-	clear: both;
-}
+ .row {
+ 	width: 620px;
+ }
 
 .col-1 {
-	width: 33.17%;
+	border-right: solid black 5px;
 }
 
 .col-2 {
-	width: 33.17%;
 }
 
 .col-3 {
-	width: 33.17%;
+	border-left: solid black 5px;
+}
+
+.row-2 {
+	border-top: solid black 5px;
+	border-bottom: solid black 5px;
+}
+
+.field {
+	height: 200px;
+	width: 200px;
+	display: inline-block;
+	padding-top: 100px;
+	padding-bottom: 100px;
 }
 
