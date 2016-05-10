@@ -8,8 +8,10 @@ var turn = X;
 var moves = 0;
 
 function boardSet(Number) {
-	return document.getElementById("box" + Number).text();
+	return document.getElementById(Number).text();
 }
+
+
 
 function checkPattern(a, b, c, turn) {
 	var result = false;
@@ -38,7 +40,9 @@ function checkWin(turn) {
 
 function setTurn() {
 		$('.field').click(function() {
-			if ($(this).text() == "") {	
+			if(checkWin(turn)) {
+				console.log(turn + "wins");
+			} else if ($(this).text() == "") {	
 				$(this).text(turn);
 				moves++
 				console.log(moves);
