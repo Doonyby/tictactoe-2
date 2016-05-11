@@ -1,57 +1,65 @@
 $(document).ready(function() {
 
-
- 
 var X = "X";
 var O = "O";
 var turn = X;
-var moves = 0;
-
-function boardSet(Number) {
-	return document.getElementById(Number).text();
-}
+var counter = 0;
 
 
 
-function checkPattern(a, b, c, turn) {
-	var result = false;
-	if (boardSet(a) == turn && boardSet(b) == turn && boardSet(c) == turn) {
-		result = true;
-	};
-	return result;
-}
 
-function checkWin(turn) {
-	var result = false;
-	if (checkPattern(1, 2, 3, turn) || 
-		checkPattern(4, 5, 6, turn) ||
-		checkPattern(7, 8, 9, turn) || 
-		checkPattern(1, 4, 7, turn) ||
-		checkPattern(2, 5, 8, turn) ||
-		checkPattern(3, 6, 9, turn) ||
-		checkPattern(1, 5, 9, turn) ||
-		checkPattern(3, 5, 7, turn)) {
 
-		result = true;
-	} 
-	return result;
-}
-
+			
 
 function setTurn() {
 		$('.field').click(function() {
-			if(checkWin(turn)) {
-				console.log(turn + "wins");
-			} else if ($(this).text() == "") {	
+			
+			if ($(this).text() == "") {	
 				$(this).text(turn);
-				moves++
-				console.log(moves);
+				counter++
+				console.log(counter);
+				var id = $(this).attr('id');
+				var choice = $(this).text();
+				checkWin();
 				switchTurn();
+				
 			} else {
 				alert("This square has already been chosen.");
 			}
-		});
-};
+			function getChoice(number) {
+				return choice;	
+			}
+			
+			function checkPattern(a, b, c, move) {
+				var result = false;
+				if (getChoice(a) == move && getChoice(b) == move && getChoice(c) == move) {
+					result = true;
+				};
+				
+				console.log(result);
+				return result;
+			}
+
+			function checkWin(move) {
+				var result = false;
+				if (checkPattern(1, 2, 3, move) || 
+					checkPattern(4, 5, 6, move) ||
+					checkPattern(7, 8, 9, move) || 
+					checkPattern(1, 4, 7, move) ||
+					checkPattern(2, 5, 8, move) ||
+					checkPattern(3, 6, 9, move) ||
+					checkPattern(1, 5, 9, move) ||
+					checkPattern(3, 5, 7, move)) {
+
+					result = true;
+				} 
+				console.log(turn);
+				console.log(result);
+				return result;
+			}
+
+		});	
+}
 
 function switchTurn() {
 	if (turn === X) {
@@ -60,9 +68,8 @@ function switchTurn() {
 		turn = X;
 	}
 	$('#gameTurn').text(turn + "'s Turn!")
-};
+}
 
-boardSet();
 setTurn();	
 });
 
