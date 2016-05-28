@@ -25,27 +25,27 @@ body {
 	padding-bottom: 35px;
  }
 
- #box1,
- #box4,
- #box7 {
+ #box0,
+ #box3,
+ #box6 {
  	border-right: 1px solid black;
  }
 
- #box3,
- #box6,
- #box9 {
+ #box2,
+ #box5,
+ #box8 {
  	border-left: 1px solid black;
  }
 
+ #box0,
  #box1,
- #box2,
- #box3 {
+ #box2 {
 	border-bottom: 1px solid black;
  }
 
+ #box6,
  #box7,
- #box8,
- #box9 {
+ #box8 {
  	border-top: 1px solid black;
  }
 
