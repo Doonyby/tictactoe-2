@@ -4,14 +4,10 @@ var X = "X";
 var O = "O";
 var turn = X;
 var counter = 0;
-for (var i = 1; i <= 9; i++) {
+for (var i = 0; i <= 8; i++) {
 		$('.grid-container').append('<div class="field" id="box' + i + '"></div>')
 	}
-
-
-
-
-			
+var board = ["","","","","","","","",""];
 
 function setTurn() {
 		$('.field').click(function() {
@@ -19,11 +15,10 @@ function setTurn() {
 			if ($(this).text() == "") {	
 				$(this).text(turn);
 				counter++
-				//console.log(counter);
 				var id = $(this).text();
-				console.log(id);
-				//getChoice(id);
-				//checkPattern();
+				var boardPosition = parseInt($(this).attr('id').slice(-1));
+				board[boardPosition] = id;
+				checkWin(board);
 				switchTurn();
 				
 				
@@ -48,19 +43,30 @@ function setTurn() {
 			// 	return result;
 			// }
 
-			// function checkWin() {
-			// 	var result = false;
-			// 	if (checkPattern(box1, box2, box3, turn) || 
-			// 		checkPattern(box4, box5, box6, turn) ||
-			// 		checkPattern(box7, box8, box9, turn) || 
-			// 		checkPattern(box1, box4, box7, turn) ||
-			// 		checkPattern(box2, box5, box8, turn) ||
-			// 		checkPattern(box3, box6, box9, turn) ||
-			// 		checkPattern(box1, box5, box9, turn) ||
-			// 		checkPattern(box3, box5, box7, turn)) {
+			function checkWin(board) {
+				var gameOver = false;
+				if (board[0] == board[1] && board[0] == board[2]) {
+					console.log(board[0] + ' wins');
+					gameOver = true;
+				}
+				else if() {
 
-			// 		result = true;
-			// 	} 
+				}
+				return gameOver;
+			}
+
+
+				// if (checkPattern(box1, box2, box3) || 
+				// 	checkPattern(box4, box5, box6) ||
+				// 	checkPattern(box7, box8, box9) || 
+				// 	checkPattern(box1, box4, box7) ||
+				// 	checkPattern(box2, box5, box8) ||
+				// 	checkPattern(box3, box6, box9) ||
+				// 	checkPattern(box1, box5, box9) ||
+				// 	checkPattern(box3, box5, box7)) {
+
+				// 	result = true;
+				// } 
 				
 			// 	return result;
 			// }
