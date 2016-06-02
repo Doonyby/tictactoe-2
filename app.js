@@ -89,11 +89,3 @@ $(document).ready(function() {
 
 setTurn();	
 });
-
-// $('#reset').on("click", function() {
-// 		location.reload();
-// 		console.log('clicked reload');
-// 	});
-
-
-
