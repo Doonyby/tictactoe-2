@@ -26,50 +26,45 @@ function setTurn() {
 				alert("This square has already been chosen.");
 			}
 			
-			function getChoice(id) {
-				console.log(id);
-				//return id;
-			}
-			
-			// function checkPattern(a, b, c, turn) {
-			// 	getChoice(id);
-			// 	checkWin();
-			// 	var result = false;
-
-			// 	if (getChoice(a) == turn && getChoice(b) == turn && getChoice(c) == turn) {
-			// 		result = true;
-			// 	};
-			// 	console.log(result);
-			// 	return result;
-			// }
-
 			function checkWin(board) {
 				var gameOver = false;
-				if (board[0] == board[1] && board[0] == board[2]) {
+				if ((board[0] === board[1]) && (board[0] === board[2])) {
 					console.log(board[0] + ' wins');
 					gameOver = true;
 				}
-				else if() {
-
+				else if (board[3] === board[4] && board[3] === board[5]) {
+					console.log(board[3] + ' wins');
+					gameOver = true;
 				}
+				else if (board[6] === board[7] && board[6] === board[8]) {
+					console.log(board[6] + ' wins');
+					gameOver = true;
+				}
+				else if (board[0] === board[3] && board[0] === board[6]) {
+					console.log(board[0] + ' wins');
+					gameOver = true;
+				}
+				else if (board[1] === board[4] && board[1] === board[7]) {
+					console.log(board[1] + ' wins');
+					gameOver = true;
+				}
+				else if (board[2] === board[5] && board[2] === board[8]) {
+					console.log(board[2] + ' wins');
+					gameOver = true;
+				}
+				else if (board[0] === board[4] && board[0] === board[8]) {
+					console.log(board[0] + ' wins');
+					gameOver = true;
+				}
+				else if (board[2] === board[4] && board[2] === board[6]) {
+					console.log(board[2] + ' wins');
+					gameOver = true;
+				}
+				console.log(gameOver);
 				return gameOver;
 			}
 
 
-				// if (checkPattern(box1, box2, box3) || 
-				// 	checkPattern(box4, box5, box6) ||
-				// 	checkPattern(box7, box8, box9) || 
-				// 	checkPattern(box1, box4, box7) ||
-				// 	checkPattern(box2, box5, box8) ||
-				// 	checkPattern(box3, box6, box9) ||
-				// 	checkPattern(box1, box5, box9) ||
-				// 	checkPattern(box3, box5, box7)) {
-
-				// 	result = true;
-				// } 
-				
-			// 	return result;
-			// }
 
 		});	
 }
