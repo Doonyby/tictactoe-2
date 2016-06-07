@@ -29,11 +29,11 @@ $(document).ready(function() {
 					var id = $(this).text();
 					var boardPosition = parseInt($(this).attr('id').slice(-1));
 					board[boardPosition] = id;
-				} else {
+				}
+				else {
 					alert("This square has already been chosen.");
 				}
-				checkWin(board);
-				switchTurn();
+				nextMove();
 			});	
 		}
 
@@ -64,13 +64,26 @@ $(document).ready(function() {
 				threeInARow = true;
 			}
 
-			if (counter == 10 && !threeInARow) {
+			return threeInARow
+			
+		}
+
+		function nextMove() {
+			var gameOver = false;
+			if (counter === 9 && !checkWin(board)) {
 				$('#gameTurn').text("Draw!!!");
+				gameOver = true;
 				restartGame();
-			} else if (threeInARow) {
+			} 
+			else if (checkWin(board)) {
 				$('#gameTurn').text(turn + "'s Win!!!!!");
+				gameOver = true;
 				restartGame();
 			}
+			else {
+				switchTurn();
+			}
+			return gameOver;
 		}
 
 		function restartGame() {
@@ -79,8 +92,9 @@ $(document).ready(function() {
 				location.reload();
 			});			
 		}
-
-		takeTurn();	
+		
+		takeTurn();
+		
 	}
 
 	ticTacToe();
