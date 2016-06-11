@@ -34,7 +34,7 @@ $(document).ready(function() {
 					alert("This square has already been chosen.");
 				}
 				nextMove();
-			});	
+			});		
 		}
 
 		function checkWin(board) {
@@ -92,8 +92,19 @@ $(document).ready(function() {
 				location.reload();
 			});			
 		}
+		// function startGame() {
+		// 	if (nextMove() == false) {
+		// 		takeTurn();
+		// 	}
+		// 	else {
+		// 		alert('bum');
+		// 	}
+		// }
+		// startGame();
 		
-		takeTurn();
+		// do {
+		// 	takeTurn();
+		// } while ( nextMove() == false )
 		
 	}
 
