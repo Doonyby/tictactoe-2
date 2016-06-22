@@ -92,19 +92,8 @@ $(document).ready(function() {
 				location.reload();
 			});			
 		}
-		// function startGame() {
-		// 	if (nextMove() == false) {
-		// 		takeTurn();
-		// 	}
-		// 	else {
-		// 		alert('bum');
-		// 	}
-		// }
-		// startGame();
-		
-		// do {
-		// 	takeTurn();
-		// } while ( nextMove() == false )
+
+		takeTurn();
 		
 	}
 
